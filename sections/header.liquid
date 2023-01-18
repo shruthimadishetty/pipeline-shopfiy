@@ -1,0 +1,178 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+{% style %}
+.desktop_menu{
+   background: transparent;
+}
+.header__desktop{
+    background: transparent;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+}
+.mobile__header-logo{
+    background: transparent;
+/*     position: fixed;
+    z-index: 5;
+    width: 100%; */
+}
+{% endstyle %}
+<div class="flex mobile__header">
+  <div class="flex mobile__header-hamburger">
+    <div class="icon" onclick="hamburger()">
+      {% render 'icon', icon: 'hamburger' %}
+    </div>
+<!--     <div class="icon-1">
+      {% render 'icon', icon: 'search' %}
+    </div> -->
+  </div>
+  <div class="mobile__header-logo icon" style="margin: auto;">
+    {% render 'image', mobileSrc: section.settings.mobile_image, desktopSrc: section.settings.image_desktop %}
+  </div>
+<!--   <div class="flex mobile__header-icons">
+    <div class="icon-1">
+      {% render 'icon', icon: 'cart' %}
+    </div>
+    <div class="icon-1">
+      {% render 'icon', icon: 'account' %}
+    </div>
+  </div> -->
+</div>
+<div id="mobile-menu">
+  {% for link in section.settings.navigation.links %}
+    <ul>
+      <li style="list-style:none;">
+        <a style="text-decoration: none; color:white" href="{{ link.url }}">{{ link.title }} </a>
+      </li>
+    </ul>
+  {% endfor %}
+</div>
+<div class="page-width header__desktop">
+  <div class="desktop__header-logo">
+    <a href="{{ link.url }}">
+<!--       {% render 'image', mobileSrc: section.settings.mobile_image, desktopSrc: section.settings.image_desktop %} -->
+      <img src= "{{ section.settings.image_desktop  | img_url}}" >
+          
+    </a>
+  </div>
+  <div class="desktop_menu">
+    {% for link in section.settings.navigation.links %}
+      <ul>
+        <li style="list-style:none;">
+          <a style="text-decoration: none; color:white;" href="{{ link.url }}">{{ link.title }} </a>
+        </li>
+      </ul>
+    {% endfor %}
+  </div>
+<!--   <div class="flex desktop__header-icons">
+    <div class="icon-1">
+      {% render 'icon', icon: 'search' %}
+    </div>
+    <div class="icon-1">
+      {% render 'icon', icon: 'cart' %}
+    </div>
+    <div class="icon-1">
+      {% render 'icon', icon: 'account' %}
+    </div>
+  </div> -->
+</div>
+{% schema %}
+{
+  "name": "Header",
+  "tag":"section",
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg_color",
+      "label":"Background color"
+    },
+    {
+      "type":"image_picker",
+      "id":"mobile_image",
+      "label":"Image logo"
+    },
+     {
+      "type":"image_picker",
+      "id":"image_desktop",
+      "label":"Image logo"
+    },
+    {
+      "type":"link_list",
+      "id":"navigation",
+      "label":"Link list"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+a:after{
+    content:' ';
+    transition:0.3s;
+  }
+  li a::after{
+    content:' ';
+    width:0;
+    height:1px;
+    background-color:black;
+    margin:auto;
+    display:block;
+  }
+  li a:hover::after{
+    width:100%;
+    transition:width o.3s linear;
+  }
+  .header__desktop{
+    display:flex;
+    justify-content:space-between;
+  }
+  .desktop__header-logo{
+    width: 100%;
+    height:100%;
+    padding: 16px 0;
+  }
+  .mobile__header-logo , .mobile__header-icons{
+    display:none;
+  }
+  .desktop_menu , .desktop__header-icons{
+    display:flex;
+    align-items:center;
+  }
+  .icon-1 {
+    height: 40px;
+    width: 40px;
+    margin:0 8px;
+    cursor:pointer;
+  }
+  #mobile-menu {
+      display: none;
+    }
+    .header__mobile {
+      display: none;
+    }
+   .mobile__header-hamburger{
+     display:none;
+   }
+  @media only screen and (max-width: 750px) {
+    .header__desktop, .desktop__header-logo {
+      display: none;
+    }
+    .header__mobile, .mobile__header-icons , .mobile__header-logo {
+      display: flex;
+    }
+    .mobile__header{
+      padding:20px;
+    }
+    .mobile__header-logo{
+      width:60px;
+      align-items:center;
+    }
+    .mobile__header-hamburger{
+       display:flex;
+       cursor:pointer;
+    }
+      .mobile-menu ul{
+    list-style:none;
+  }
+  }
+{% endstyle %}
+

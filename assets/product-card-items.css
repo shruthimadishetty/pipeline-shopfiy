@@ -1,0 +1,26 @@
+.image-container{
+    position:relative;
+}  
+.quick{
+  text-transform:uppercase;
+  position:absolute;
+  bottom:5%;
+  left:40%;
+  transform:translateY(200%);
+  opacity:0;
+}
+.image-container:hover .quick{
+  transform:translateY(0);
+  opacity:1;
+}
+.product-name{
+  text-decoration:none;
+  font-size:14px;
+  margin:8px 0px 2px;
+  font-family:sans-serif;
+  color:black;
+  margin-top:20px;
+}
+.price{
+  font-size:13px;
+}

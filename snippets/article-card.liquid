@@ -1,0 +1,21 @@
+{{ 'article-card.css' | asset_url | stylesheet_tag }}
+
+<div class="article-card">
+  <a href="{{ article.url }}" class="article-card__link">
+    {% render 'image', class:"media media--portrait",mobileSrc: article.image, desktopSrc: article.image %}
+  </a>
+   
+  <div class="article-card__info">
+    <div class="article-card__date">
+      {{ article.published_at | date: '%B %d, %Y' }}
+    </div>
+    <div class="h4">{{ article.title }}</div>
+    <div> {{ article.author }}</div>
+    <div class="article-card__info--description">
+      {{ article.excerpt_or_content | strip_html | truncate: 150 }}
+    </div>
+
+    <a href="{{ article.url }}" class="readmore_text">Read more</a>
+  </div>
+</div>
+

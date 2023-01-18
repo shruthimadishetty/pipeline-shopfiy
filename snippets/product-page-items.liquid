@@ -1,0 +1,28 @@
+{{ 'product-card-items.css' | asset_url | stylesheet_tag }}
+
+<product-card class="product-card relative" data-handle="{{ product.handle }}">
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+  {%- assign form_id = 'Form-' | append: section.id | append: product.id -%}
+
+  <div class="image-container">
+  <a href="{{ product.url }}" class="product-card__link hover">
+    {%- render 'image',
+      class: 'product-card__image media media--square',
+      mobileSrc: featured_image,
+      desktopSrc: featured_image
+    -%}
+  </a>
+  <div class="p quick">quick view</div>
+  </div>
+  <div class="product-card__meta center mb-20">
+    <a class="product_title" href="{{ product.url }}">
+      <div class="product-name">{{ product.title }}</div>
+    </a>  
+  </div>
+
+  <script type="application/json">
+    {{ product.variants | json }}
+  </script>
+</product-card>
+

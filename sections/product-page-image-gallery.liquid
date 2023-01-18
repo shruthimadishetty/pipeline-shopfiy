@@ -1,0 +1,129 @@
+{{ 'product-page-image-gallery.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%- endstyle -%}
+
+<div class="image-gallery section-{{ section.id }}-padding page-width">
+            <div class="image-gallery-text left">
+                  {% if section.settings.capture_text != blank %}
+                  <div class="caption-text">{{ section.settings.capture_text }}</div>
+                  {% endif %}
+        
+                  {% if section.settings.heading_text != blank %}
+                  <div class="heading-text h2">{{ section.settings.heading_text }}</div>
+                  {% endif %}
+            </div>
+      {% if section.blocks.size > 0 %}
+          <div class="image-gallery-images" data-flickity='{ "cellAlign": "left", "contain": true,"pageDots":false}'>
+              {% for block in section.blocks %}
+                <div class="images-of-blocks">
+                  {% if block.settings.image != blank %}
+                  <div class="image-inner">
+                    <div class="image-outer">
+                       {% assign mobile_image = block.settings.image_mobile | default: block.settings.image %}
+                       {% render 'image', mobileSrc: mobile_image, desktopSrc: block.settings.image %}   
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+          </div>
+      {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "image gallery",
+  "tag": "section",
+  "class": "homepage-section",
+  "settings":[
+    {
+      "type": "text",
+      "id": "capture_text",
+      "label": "Capture text"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image-gallery",
+      "name": "image block",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1200 x 500px .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (Mobile)",
+          "info": "600 x 800px .jpg recommended"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 150,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 150,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 40
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "image gallery"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,178 @@
+{{ 'image-with-products.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .background-{{ section.id }} {
+    background-color:{{ section.settings.background_color }};
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="image-products section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="grid grid--1-col grid--2-col-desktop {{ section.settings.image_position }}">
+      <div class="grid__item">
+        {% if section.settings.video != blank %}
+          <div class="media media--square">
+            {% for video in section.settings.video.sources %}
+              {% if video.format == 'mp4' %}
+                <video autoplay muted loop playsinline>
+                  <source src="{{ video.url }}" type="{{ video.mime_type }}">
+                </video>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif section.settings.image != blank %}
+          {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+          {% render 'image',
+            class: 'media media--square',
+            mobileSrc: mobile_image,
+            desktopSrc: section.settings.image
+          %}
+        {% else %}
+          <div class="media media--square">
+            {{ 'image' | placeholder_svg_tag: 'placeholder' }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="grid__item">
+        <div class="image-products__background background-{{ section.id }}">
+          {% if section.settings.section_title != blank %}
+            <div class="section-title">
+              {{ section.settings.section_title }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.collection_id != blank %}
+            <div class="image-products__sliderwrap">
+              <div class="image-products__slider" data-flickity='{ "cellAlign": "center", "contain": true }'>
+                {% assign product_limit = section.settings.product_limit %}
+                {% for product in section.settings.collection_id.products limit: product_limit %}
+                  <div class="image-products__slideritem">
+                    {% render 'product-card', product: product %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Image with products",
+  "tag":"section",
+  "settings": [
+    {
+      "type":"color",
+      "id":"background_color",
+      "label":"Section background"
+    },
+    {
+      "type": "header",
+      "content": "Media settings"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Video has high priority. If this field is blank the image will be in use"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1200 x 500px .jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "600 x 800px .jpg recommended"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Video/Image position",
+      "options": [
+        {
+          "value": "direction-row",
+          "label": "Left"
+        },
+        {
+          "value": "direction-row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "direction-row"
+    },
+    {
+      "type": "header",
+      "content": "Collection settings"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Refresh & Rejuvenate"
+    },
+    {
+      "type": "collection",
+      "id": "collection_id",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Product limit",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with products"
+    }
+  ]
+}
+{% endschema %}

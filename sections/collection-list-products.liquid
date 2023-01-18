@@ -1,0 +1,189 @@
+{{ 'collection-list-products.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.blocks.size > 0 %}
+  <div class="image-gallery page-width section-{{ section.id }}-padding">
+    <div class="flexbox carousel" data-flickity='{ "cellAlign": "left", "contain": true,"watchCSS":true }'>
+      {% for block in section.blocks %}
+        <div class="flexbox__item images-inner">
+          <div class="image-item">
+                         <div class="image-item__image images-outer">
+                              {% if block.settings.image != blank %}
+                                {% assign mobile_image = block.settings.image_mobile | default: block.settings.image %}
+                                {% render 'image', class:"media media--square",mobileSrc: mobile_image, desktopSrc: block.settings.image %}      
+                              {% endif %}
+                        </div>    
+            <div class="image-item__content">
+                    <div class="image-items flex {{ block.settings.content_position }}">
+                             <div class="image-items_text {{ block.settings.text_alignment }}">
+                                  {% if block.settings.heading_text != blank %}
+                                    <h2 class="image-text__heading">{{ block.settings.heading_text }}</h2>
+                                  {% endif %}
+                            </div>
+                     </div>
+             </div>
+            {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+                <div class="image-text__button">
+                  <a class="collection-button" href="{{ block.settings.button_link }}">
+                    {{ block.settings.button_text }}
+                  </a>
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+
+
+
+{% schema %}
+{
+  "name": "image gallery",
+  "tag": "section",
+  "class": "homepage-section",
+  "settings":[
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image-gallery",
+      "name": "image block",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1200 x 500px .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (Mobile)",
+          "info": "600 x 800px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "heading_text",
+          "label": "Heading text",
+          "default": "Beautiful,natural skin"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "align-start justify-start",
+              "label": "Top left"
+            },
+            {
+              "value": "align-start justify-center",
+              "label": "Top center"
+            },
+            {
+              "value": "align-start justify-end",
+              "label": "Top right"
+            },
+            {
+              "value": "align-center justify-start",
+              "label": "Middle left"
+            },
+            {
+              "value": "align-center justify-center",
+              "label": "Middle center"
+            },
+            {
+              "value": "align-center justify-end",
+              "label": "Middle right"
+            },
+            {
+              "value": "align-end justify-start",
+              "label": "Bottom left"
+            },
+            {
+              "value": "align-end justify-center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "align-end justify-end",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "align-start justify-start"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "image gallery"
+    }
+  ]
+}
+{% endschema %}

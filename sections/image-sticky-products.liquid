@@ -1,0 +1,255 @@
+{{ 'image-sticky-products.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .caption-{{section.id}}{
+    color:{{ section.settings.caption_color }};
+  }
+  .heading-{{section.id}}{
+    color:{{ section.settings.heading_color }};
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+
+
+<div class="image-products section-{{ section.id }}-padding">
+<!--   <div class="page-width"> -->
+    <div class="grid grid--1-col grid--2-col-desktop {{ section.settings.image_position }}">
+      <div class="grid__item images__contentitem">
+        <div class="images__contents">
+          {% if section.settings.image != blank %}
+            {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+            {% render 'image',
+              class: 'media media--square sticky_fix',
+              mobileSrc: mobile_image,
+              desktopSrc: section.settings.image
+            %}
+          {% else %}
+            <div class="media media--square">
+              {{ 'image' | placeholder_svg_tag: 'placeholder' }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="images__overlay flex content_wrappers {{ section.settings.content_position }}">
+          <div class="products__max-widths {{ section.settings.text_alignment }}">
+            {% if section.settings.caption_text != blank %}
+              <div class="caption-{{section.id}}">
+                {{ section.settings.caption_text }}
+              </div>
+            {% endif %}
+            {% if section.settings.heading_text != blank %}
+              <div class="heading-{{section.id}} heading-texts h2">
+                {{ section.settings.heading_text }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid__item">
+        <div class="image-product__background">
+          <div class="image-product__sliderwrap">
+            <div class="image-product__slider grid products" data-flickity='{ "cellAlign": "left", "contain": true,"watchCSS":true }'>
+              {% for block in section.blocks %}
+                <div class="image-product__slideritem grid__item">
+                  {% render 'product-card', product: block.settings.product ,class:"media media--square" %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--   </div> -->
+</div>
+
+{% schema %}
+{
+  "name": "Image with sticky",
+  "tag":"section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Media settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1200 x 500px .jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "600 x 800px .jpg recommended"
+    },
+    {
+      "type":"text",
+      "id":"caption_text",
+      "label":"Caption text"
+    },
+    {
+      "type":"color",
+      "id":"caption_color",
+      "label":"Caption color"
+    },
+    {
+      "type":"text",
+      "id":"heading_text",
+      "label":"Heading text"
+    },
+    {
+      "type":"color",
+      "id":"heading_color",
+      "label":"Heading color"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+      ],
+        "default": "align-start justify-start"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Video/Image position",
+      "options": [
+        {
+          "value": "direction-row",
+          "label": "Left"
+        },
+        {
+          "value": "direction-row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "direction-row"
+    },
+    {
+      "type": "header",
+      "content": "Collection settings"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Product limit",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+      {
+        "type": "product",
+        "name": "Add product",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+  "presets": [
+    {
+      "name": "Image with sticky"
+    }
+  ]
+}
+{% endschema %}

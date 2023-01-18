@@ -1,0 +1,227 @@
+<div class="scrolling-text--inner">
+  <div class="wrapper">
+    <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+     <div class="scrolling-text__item outline-text">
+      {% if section.settings.image != blank %}
+        {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+        {% render 'image', class= 'media media--square', mobileSrc: section.settings.image, desktopSrc: section.settings.image %}
+      {% endif  %}
+    </div>
+  </div>
+</div>
+{% style %}
+.scrolling-text--inner{
+   display:flex;
+   align-items: center;
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding }}px 0;
+    text-transform:uppercase;
+    white-space:nowrap;
+    padding:0 6rem;
+    letter-spacing:1px;
+    overflow: hidden;
+  }
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    animation: move-rtl {{ section.settings.animation_time }}s linear infinite;
+}
+.scrolling-text__item{
+   display: inline-flex;
+    align-items: center;
+   padding: 0 30px;
+}
+.scrolling-text__item img{
+  width:100px;
+  height:100px;
+  margin:20px;
+}
+.outline-text{
+  diplay:flex;
+  color: {{ section.settings.text_color }};
+/*    fill:transparent;
+    -webkit-text-stroke-width:1px;
+    -webkit-text-stroke-color:{{ section.settings.text_color }}; */
+    font-size: {{ section.settings.font_size }}px;
+    font-weight: {{ section.settings.font_weight }};
+    background: {{ section.settings.background_color }};
+}
+ .outline-text .text--fill{
+     fill:transparent;
+    -webkit-text-stroke-width:1px;
+    -webkit-text-stroke-color:{{ section.settings.text_color }};
+ }
+  @keyframes move-rtl {
+    0%{
+      tranform:translateX(0);
+    }
+    100%{
+      transform:translateX(-100%);
+    }
+  }
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Text marquee-section",
+    "tag":"section",
+    "class":"section",
+    "settings":[
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "200 x 200px .jpg recommended"
+      },
+      {
+        "type":"text",
+        "id":"text_1",
+        "label":"Text",
+        "default":"NEW CLOTHES NEW PASSION"
+      },
+      {
+        "type":"text",
+        "id":"text_2",
+        "label":"Text",
+        "default":"more than fashion"
+      },
+      {
+        "type":"text",
+        "id":"text_3",
+        "label":"Text",
+        "default":"wear better, look better"
+      },
+      {
+        "type":"text",
+        "id":"text_4",
+        "label":"Text",
+        "default":"not just fashion, but design"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Text backgroound color",
+        "default": "#1B1C26"
+      },
+      {
+        "type": "range",
+        "id": "padding",
+        "min": 20,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "font_size",
+        "min": 40,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Font size",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "font_weight",
+        "min": 400,
+        "max": 600,
+        "step": 100,
+        "label": "Font weight",
+        "default": 600
+      },
+      {
+        "type": "range",
+        "id": "animation_time",
+        "min": 10,
+        "max": 40,
+        "step": 5,
+        "unit": "s",
+        "label": "Animation time in second",
+        "default": 30
+      }
+    ],
+    "presets":[
+      {
+        "name":"Text marquee-section"
+      }
+    ]
+  }
+{% endschema %}

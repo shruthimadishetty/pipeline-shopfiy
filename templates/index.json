@@ -1,0 +1,326 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-skeleton",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "811874c7-56ca-4283-a733-5dc9a56d83f5": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/third_flipped_1950x_0cdd6def-1ebe-42cf-a89e-fca3e0b765da.webp",
+        "image_mobile": "shopify:\/\/shop_images\/mobile_720x_5e7cea30-20b5-4cf8-8cf7-ec50c8ebe738.webp",
+        "caption_text": "PURIFY AND HEAL",
+        "text_color": "#ffffff",
+        "title": "Intentional Skincare",
+        "title_color": "#ffffff",
+        "button_text": "shop Now",
+        "button_link": "shopify:\/\/blogs\/news",
+        "bg_color": "#ffffff",
+        "text_alignment": "left",
+        "content_position": "align-center justify-start"
+      }
+    },
+    "196fd74c-e1ea-410f-b663-fcb4aac5d8f4": {
+      "type": "header-banner",
+      "settings": {
+        "mobile_image": "shopify:\/\/shop_images\/Screenshot__1_-removebg-preview.png",
+        "navigation": ""
+      }
+    },
+    "ae0f5ede-6066-4e88-8e61-a9451c7af2c0": {
+      "type": "richtext",
+      "settings": {
+        "title_text": "Luxurious skincare products that are effective, non-toxic and beautiful.",
+        "text_color": "#334641",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "0234f712-f82f-4b80-97f6-0ea503360285": {
+      "type": "image-with-products",
+      "settings": {
+        "background_color": "#f8f0e7",
+        "video": "shopify:\/\/files\/videos\/prprprprp.mp4",
+        "image_position": "direction-row",
+        "section_title": "Refresh & Rejuvenate",
+        "collection_id": "creams-salves",
+        "product_limit": 8,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "040f1db2-03a6-4d43-9813-d2e1780753cf": {
+      "type": "image-with-products",
+      "settings": {
+        "background_color": "#fcfaf7",
+        "image": "shopify:\/\/shop_images\/smudge-flipped_1080x_70d49302-0084-4b31-a09b-c5b2f6b765ce.webp",
+        "image_mobile": "shopify:\/\/shop_images\/smudge-flipped_1080x_70d49302-0084-4b31-a09b-c5b2f6b765ce.webp",
+        "image_position": "direction-row-reverse",
+        "section_title": "Refresh & Rejuvenate",
+        "collection_id": "creams-salves",
+        "product_limit": 5,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "6b3ec78d-184f-4f8e-8ddf-274a10dc1e39": {
+      "type": "product-card",
+      "settings": {
+        "text_id": "OUR BEST SELLERS",
+        "collection_id": "oils-serums",
+        "product_limit": 8
+      }
+    },
+    "e4477ae0-44c5-4fb7-99b7-253e8fd890e3": {
+      "type": "image-with-text",
+      "settings": {
+        "bg_color": "#fffcf9",
+        "heading_text": "Ingredients with purpose",
+        "paragraph_text": "<p>Our formulas are science-backed while remaining safe for all skin types, organic and cruelty-free. An effective and radically new way to take care of your skin.<\/p>",
+        "button_text": "LEARN MORE",
+        "button_link": "shopify:\/\/products\/castille-soap",
+        "image": "shopify:\/\/shop_images\/smile-dimples-blue_900x_c58e5ca6-180d-4928-8a9b-5f55b6fd5285.webp",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "70ffefa1-b82c-4b85-bc2f-8046aa71bfb7": {
+      "type": "collection-list",
+      "disabled": true,
+      "blocks": {
+        "b44dd045-6f69-41f5-917d-96eece228d7b": {
+          "type": "block-type",
+          "settings": {
+            "collection": "creams-salves",
+            "image_text_alignment_justify": "center",
+            "image_text_alignment": "center",
+            "text_link": "shopify:\/\/collections\/creams-salves"
+          }
+        },
+        "3b83eb19-894a-4844-9166-7b0fa7fcb9ac": {
+          "type": "block-type",
+          "settings": {
+            "collection": "oils-serums",
+            "image_text_alignment_justify": "center",
+            "image_text_alignment": "center",
+            "text_link": "shopify:\/\/collections\/oils-serums"
+          }
+        }
+      },
+      "block_order": [
+        "b44dd045-6f69-41f5-917d-96eece228d7b",
+        "3b83eb19-894a-4844-9166-7b0fa7fcb9ac"
+      ],
+      "settings": {
+      }
+    },
+    "f1f58359-cce3-4884-9807-7bc131f6ccfa": {
+      "type": "image-sticky-products",
+      "blocks": {
+        "4ce3c507-d297-453c-afcf-248ffee5ddd3": {
+          "type": "product",
+          "settings": {
+            "product": "antioxidant-detox-serum"
+          }
+        },
+        "86525eb8-ed57-4861-91cc-cd6728264414": {
+          "type": "product",
+          "settings": {
+            "product": "calming-cream"
+          }
+        },
+        "d50cb37c-6d4d-458b-ad1b-e7a08d8ef1a3": {
+          "type": "product",
+          "settings": {
+            "product": "cleansing-toner"
+          }
+        },
+        "087c1d09-4f9e-4cea-a3b3-d2d1500c879b": {
+          "type": "product",
+          "settings": {
+            "product": "balancing-serum"
+          }
+        }
+      },
+      "block_order": [
+        "4ce3c507-d297-453c-afcf-248ffee5ddd3",
+        "86525eb8-ed57-4861-91cc-cd6728264414",
+        "d50cb37c-6d4d-458b-ad1b-e7a08d8ef1a3",
+        "087c1d09-4f9e-4cea-a3b3-d2d1500c879b"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/flower-darma-mock_900x_b37d79c7-39e1-46f7-8dbb-d547f19c87c4.webp",
+        "caption_text": "BEAUTY ESSENTIALS",
+        "caption_color": "#ffffff",
+        "heading_text": "Create your own ritual",
+        "heading_color": "#ffffff",
+        "text_alignment": "center",
+        "content_position": "align-center justify-center",
+        "image_position": "direction-row",
+        "product_limit": 4,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3681569b-9ec3-41ef-ac63-466fed31e4c2": {
+      "type": "collection-list-products",
+      "blocks": {
+        "37260ae4-d0b0-49f4-9912-c6b1237621ce": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/skincare-texture_copy_1512x_16097212-ab02-4f89-9fe7-89f5d50c8746.webp",
+            "heading_text": "Creams & salves",
+            "button_text": "VIEW THE COLLECTION",
+            "button_link": "shopify:\/\/collections\/creams-salves",
+            "text_alignment": "center",
+            "content_position": "align-center justify-center"
+          }
+        },
+        "bc854b87-1b37-486a-bab8-b8aa20a91b25": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/product-grid-1_copy.webp",
+            "heading_text": "oils & salves",
+            "button_text": "VIEW THE COLLECTION",
+            "button_link": "shopify:\/\/collections\/oils-serums",
+            "text_alignment": "center",
+            "content_position": "align-center justify-center"
+          }
+        }
+      },
+      "block_order": [
+        "37260ae4-d0b0-49f4-9912-c6b1237621ce",
+        "bc854b87-1b37-486a-bab8-b8aa20a91b25"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "0c129cea-ca50-4065-a86f-3ed022a75486": {
+      "type": "usp-section",
+      "blocks": {
+        "0f8365c3-a0f4-467e-8360-20656c06986d": {
+          "type": "usp-item",
+          "settings": {
+            "logo": "<svg aria-hidden=\"true\" class=\"icon icon-leaf\" viewbox=\"0 0 24 24\"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}<\/style><\/defs><path class=\"cls-1\" d=\"M10.248 21.1a7.532 7.532 0 0 1-7.531-7.532C2.717 2.645 15.861 8.252 22.189 3a.466.466 0 0 1 .479-.048.5.5 0 0 1 .3.378C24.9 14.643 16.572 21.1 10.248 21.1z\"><\/path><path class=\"cls-1\" d=\"M13.261 11.554a24.984 24.984 0 0 0-8.609 4.286L.75 19.17\"><\/path><\/svg>",
+            "heading_text": "ALL NATURAL",
+            "sub_heading_text": "<p>We use only what nature gave us<\/p>",
+            "text_color": ""
+          }
+        },
+        "e33c6991-140b-4a3e-8973-9ff0cddd7a21": {
+          "type": "usp-item",
+          "settings": {
+            "logo": "<svg aria-hidden=\"true\" class=\"icon icon-water\" viewbox=\"0 0 24 24\"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}<\/style><\/defs><path class=\"cls-1\" d=\"M17.251 12a5.25 5.25 0 0 1-10.5 0c0-4.5 4.5-9.75 5.25-9.75s5.25 5.25 5.25 9.75z\"><\/path><path class=\"cls-1\" d=\"M21.547 15.574a2.494 2.494 0 0 1 .954 1.817c0 2.408-4.7 4.359-10.5 4.359S1.5 19.8 1.5 17.391a2.49 2.49 0 0 1 .954-1.817M12 14.25A2.25 2.25 0 0 1 9.751 12\"><\/path><\/svg>",
+            "heading_text": "POLLUTANT FREE",
+            "sub_heading_text": "<p>Keep our oceans clean and clear<\/p>",
+            "text_color": ""
+          }
+        },
+        "92e830e4-ae4b-434b-922a-49ed24335faf": {
+          "type": "usp-item",
+          "settings": {
+            "logo": "<svg aria-hidden=\"true\" class=\"icon icon-animal-paw\" viewbox=\"0 0 25 25\"><g transform=\"translate(1 2)\" stroke=\"#000\" stroke-width=\"1.5\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"2.25\" cy=\"11.25\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><ellipse cx=\"7.5\" cy=\"3.75\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><ellipse cx=\"20.25\" cy=\"10.5\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><ellipse cx=\"15\" cy=\"3.75\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><path d=\"M15.574 14.903c-.385-.3-.6-.77-.578-1.257V13.5a3.75 3.75 0 0 0-7.5 0v.146a1.5 1.5 0 0 1-.578 1.257A3.963 3.963 0 0 0 5.25 18c0 2.485 2.686 4.5 6 4.5s6-2.015 6-4.5a3.963 3.963 0 0 0-1.676-3.097z\"><\/path><\/g><\/svg>",
+            "heading_text": "CRUELTY FREE",
+            "sub_heading_text": "<p>Animals deserve our respect<\/p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "0f8365c3-a0f4-467e-8360-20656c06986d",
+        "e33c6991-140b-4a3e-8973-9ff0cddd7a21",
+        "92e830e4-ae4b-434b-922a-49ed24335faf"
+      ],
+      "settings": {
+        "heading_text": "",
+        "background_color": "#fffcf9",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "6de4ce9d-8e6e-4654-8d11-dfd99f5ee0e2": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/fast_480x_b3c2971d-7830-44a9-9456-12a430a11f07.webp",
+        "text_1": "NEW CLOTHES NEW PASSION",
+        "text_2": "more than fashion",
+        "text_3": "wear better, look better",
+        "text_4": "not just fashion, but design",
+        "text_color": "#ffffff",
+        "background_color": "#121212",
+        "padding": 30,
+        "font_size": 40,
+        "font_weight": 600,
+        "animation_time": 30
+      }
+    },
+    "6d599e33-bb0b-4e38-acd1-4371ea4ccbc4": {
+      "type": "logo-list",
+      "blocks": {
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-0": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/allure_480x_d8167a03-164b-49d1-81dd-ba46a9d5501d.webp",
+            "link": ""
+          }
+        },
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-1": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/r29_480x_da92a646-9ce7-4b9c-afa0-0b8a8ad97072.webp",
+            "link": ""
+          }
+        },
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-2": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fast_480x_ea024914-b8ba-4d66-9dce-18e740559cb3.webp",
+            "link": ""
+          }
+        },
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-3": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bistle_480x_203ac53a-2118-4883-9a38-4606052e8e1e.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-0",
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-1",
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-2",
+        "template--17508773757217__6d599e33-bb0b-4e38-acd1-4371ea4ccbc4-167368033460e86ddd-3"
+      ],
+      "settings": {
+        "text_color": "#ffffff",
+        "background_color": "#313134",
+        "padding": 30,
+        "font_size": 40,
+        "font_weight": 600,
+        "animation_time": 30
+      }
+    }
+  },
+  "order": [
+    "main",
+    "811874c7-56ca-4283-a733-5dc9a56d83f5",
+    "196fd74c-e1ea-410f-b663-fcb4aac5d8f4",
+    "ae0f5ede-6066-4e88-8e61-a9451c7af2c0",
+    "0234f712-f82f-4b80-97f6-0ea503360285",
+    "040f1db2-03a6-4d43-9813-d2e1780753cf",
+    "6b3ec78d-184f-4f8e-8ddf-274a10dc1e39",
+    "e4477ae0-44c5-4fb7-99b7-253e8fd890e3",
+    "70ffefa1-b82c-4b85-bc2f-8046aa71bfb7",
+    "f1f58359-cce3-4884-9807-7bc131f6ccfa",
+    "3681569b-9ec3-41ef-ac63-466fed31e4c2",
+    "0c129cea-ca50-4065-a86f-3ed022a75486",
+    "6de4ce9d-8e6e-4654-8d11-dfd99f5ee0e2",
+    "6d599e33-bb0b-4e38-acd1-4371ea4ccbc4"
+  ]
+}

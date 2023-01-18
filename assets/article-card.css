@@ -1,0 +1,13 @@
+.readmore_text{
+  color:black;
+  text-decoration:underline;
+  cursor:pointer;
+}
+readmore_text:hover{
+  text-decoration:none;
+}
+.article-card{
+  margin-left: 7px;
+  line-height:2.3;
+  padding-bottom:36px;
+}

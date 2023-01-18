@@ -1,0 +1,93 @@
+{{ 'footer.css' |asset_url| stylesheet_tag }}
+
+<div class="wrapper-padded footer">
+  <div class="flexbox footer_wrapper">
+        <div class="flexbox__item image_logo">
+           <div class="image">
+                    {% if section.settings.logo_image != blank %}
+                      <div class="navbar-logo">{% render 'image-code',desktopSrc:section.settings.logo_image %}</div>
+                    {% endif %}
+                
+               </div>
+          </div>
+<!------------------------  Helpful Links --------------------------->  
+             <div class="flexbox__item">
+                    <div class="h3 item_heading">Helpful Links</div>
+                    {% for link in section.settings.quick_link.links %}
+                        <div class="item_content">
+                          <a class="menu_links" href="{{ link.url }}">{{ link.title }}</a>
+                        </div>
+                    {% endfor %}
+             </div>
+
+<!------------------------     Contact us --------------------------->
+        <div class="flexbox__item">
+                <div class="h3 item_heading">Our Values</div>
+                    <div class="item_content">
+                        <div class="item_content">You are a part of this wonderful world and we know that</div>
+                        <div class="item_content">you are powerful enough to run it!</div>
+                    </div>
+                </div>
+             <!------------  Newsletter ------------>
+              <div class="flexbox__item">
+                <div class="h3 item_heading">Newsletter</div>
+                <input class="input_email" type="email" placeholder="email@example.com">
+                <button class="button button--primary">Subscribe</button>
+              </div>
+        </div>
+<!------------------------  Icon --------------------------->    
+          <div class="flexbox__item">
+            <div class="bottom-footer-row">
+                  <div class="botton-footer_icon center">
+                    {% render 'icon', icon: 'pi-visa' %}
+                    {% render 'icon', icon: 'pi-master' %}
+                    {% render 'icon', icon: 'pi-american_express' %}
+                    {% render 'icon', icon: 'pi-paypal' %}
+                    {% render 'icon', icon: 'pi-diners_club' %}
+                    {% render 'icon', icon: 'pi-discover' %}
+                  </div>
+              </div>
+           </div>
+  
+<!--------------------     cards ------------------------>
+      <div class="bottom-footer center">
+         
+                  <div class="social_links flex item_content">
+                      <a class="footer_icon" href="https://www.facebook.com/theteamateight">
+                        {% render 'icon', icon: 'facebook' %}
+                      </a>
+                      <a class="footer_icon" href="https://www.instagram.com/theteamateight/">
+                        {% render 'icon', icon: 'instagram' %}
+                      </a>
+                      <a class="footer_icon" href="https://www.tiktok.com/@shopify">
+                        {% render 'icon', icon: 'tiktok' %}
+                      </a>
+                  </div>
+             <!------ bottom-footer center -------------------->
+              <div class="bottom-footer-links">
+                <a href="/">PIPELINE THEME 2023</a>
+                <a href="/">Powered by Shopify</a>
+              </div>
+      </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "tag": "footer",
+    "class":"homepage-section",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"logo_image",
+        "label":"Logo"
+      },
+      {
+        "type": "link_list",
+        "id": "quick_link",
+        "default": "footer",
+        "label": "Footer"
+      }
+    ]
+  }
+{% endschema %}

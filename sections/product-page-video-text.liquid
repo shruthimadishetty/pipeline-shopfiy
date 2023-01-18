@@ -1,0 +1,257 @@
+{{ 'product-page-video-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .background-{{ section.id }} {
+    background-color:{{ section.settings.background_color }};
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="image-products section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="grid grid--1-col grid--2-col-desktop {{ section.settings.image_position }}">
+      <div class="grid__item">
+        {% if section.settings.video != blank %}
+          <div class="media media--square">
+            {% for video in section.settings.video.sources %}
+              {% if video.format == 'mp4' %}
+                <video autoplay muted loop playsinline>
+                  <source src="{{ video.url }}" type="{{ video.mime_type }}">
+                </video>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif section.settings.image != blank %}
+          {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+          {% render 'image',
+            class: 'media media--square',
+            mobileSrc: mobile_image,
+            desktopSrc: section.settings.image
+          %}
+        {% else %}
+          <div class="media media--square">
+            {{ 'image' | placeholder_svg_tag: 'placeholder' }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="grid__item image-products__background background-{{ section.id }}">
+           <div class="flex content_wrapper {{ section.settings.content_position }}">
+             <div class="product__max-width {{ section.settings.text_alignment }} text-line">
+              {% if section.settings.heading_text != blank %}
+                <div class="content-heading h2">
+                  {{ section.settings.heading_text }}
+                </div>
+              {% endif %}
+              {% if section.settings.text1_id != blank %}
+                <div class="paragraph1">
+                  {{ section.settings.text1_id }}
+                </div>
+              {% endif %}
+              {% if section.settings.text2_id != blank %}
+                <div class="paragraph2">
+                  {{ section.settings.text2_id }}
+                </div>
+              {% endif %}
+              {% if section.settings.text3_id != blank %}
+                <div class="paragraph3">
+                  {{ section.settings.text3_id }}
+                </div>
+              {% endif %}
+              {% if section.settings.text4_id != blank %}
+                <div class="paragraph4">
+                  {{ section.settings.text4_id }}
+                </div>
+              {% endif %}
+             </div>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "product page video text",
+  "tag":"section",
+  "settings": [
+    {
+      "type":"color",
+      "id":"background_color",
+      "label":"Section background"
+    },
+    {
+      "type": "header",
+      "content": "Media settings"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Video has high priority. If this field is blank the image will be in use"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1200 x 500px .jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "600 x 800px .jpg recommended"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Video/Image position",
+      "options": [
+        {
+          "value": "direction-row",
+          "label": "Left"
+        },
+        {
+          "value": "direction-row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "direction-row"
+    },
+    {
+      "type": "header",
+      "content": "heading settings"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text"
+    },
+    {
+      "type":"text",
+      "id":"text1_id",
+      "label":"Text1"
+    },
+    {
+      "type":"text",
+      "id":"text2_id",
+      "label":"Text2"
+    },
+    {
+      "type":"text",
+      "id":"text3_id",
+      "label":"Text3"
+    },
+    {
+      "type":"text",
+      "id":"text4_id",
+      "label":"Text4"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+          {
+            "value": "align-start justify-start",
+            "label": "Top left"
+          },
+          {
+            "value": "align-start justify-center",
+            "label": "Top center"
+          },
+          {
+            "value": "align-start justify-end",
+            "label": "Top right"
+          },
+          {
+            "value": "align-center justify-start",
+            "label": "Middle left"
+          },
+          {
+            "value": "align-center justify-center",
+            "label": "Middle center"
+          },
+          {
+            "value": "align-center justify-end",
+            "label": "Middle right"
+          },
+          {
+            "value": "align-end justify-start",
+            "label": "Bottom left"
+          },
+          {
+            "value": "align-end justify-center",
+            "label": "Bottom center"
+          },
+          {
+            "value": "align-end justify-end",
+            "label": "Bottom right"
+          }
+      ],
+        "default": "align-start justify-start"
+    },
+
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "product page video text"
+    }
+  ]
+}
+{% endschema %}

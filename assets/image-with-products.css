@@ -1,0 +1,20 @@
+.image-products__background {
+  padding: 3.5rem;
+  height: 100%;
+}
+
+.image-products__sliderwrap {
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.image-products__slideritem {
+  background: #fff;
+  padding: 2rem;
+}
+
+@media only screen and (min-width: 990px) {
+  .direction-row-reverse {
+    flex-direction: row-reverse;
+  }
+}

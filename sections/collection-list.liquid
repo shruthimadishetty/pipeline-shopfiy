@@ -1,0 +1,168 @@
+
+<div class="image-text-bg-container">
+    <div class="image-text-container">
+        {%for block in section.blocks%}
+            <div  class="image-text-item image-item">
+                {% render 'image', class: 'media media--landscape', mobileSrc: block.settings.collection.featured_image, desktopSrc: block.settings.collection.featured_image  %}
+                <div class="image-item-content-{{block.id}}">
+                    {% if block.settings.collection.title != blank %}
+                      <div class="h4 sub-heading__text-{{ block.id }}">{{ block.settings.collection.title }}</div>
+                    {% endif %}
+                    <a class="collection" href="{{ block.settings.text_link }}">
+                    </h6> VIEW THE COLLECTION ></h6>
+                    </a>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
+{% style  %}
+  .collection{
+    color:black;
+    text-decoration:none;
+    text-transform:uppercase;
+    position:absolute;
+    bottom:5%;
+    left:40%;
+    transform:translateY(150%);
+    opacity:0;
+  }
+  .image-text-item:hover .collection{
+    transform:translateY(0);
+    opacity:1;
+  }
+  .image-item{
+  overflow:hidden;
+}
+  .image-text-item{
+    transition:all 5s;
+  }
+  .image-text-item:hover img{
+    transform:scale(1.1);
+  }
+.image-text-bg-container {
+    width:100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding:30px 0;
+}
+.image-text-container {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items: center;
+    gap:20px;
+    padding:0 30px;
+}
+{%for block in section.blocks%}
+.image-text-item {
+    height:100%;
+    width:50%;
+    position:relative;
+}
+.image_text_image img {
+  height:auto;
+  width:100%;
+  object-fit:cover;
+  }
+.image-item-content-{{block.id}} {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:20px;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: {{block.settings.image_text_alignment_justify}};
+    align-items: {{ block.settings.image_text_alignment}};
+}
+.text-heading-{{block.id}} {
+    text-align:center;
+    line-height:20px;
+    margin:0px;
+}
+  .sub-heading__text-{{ block.id }} {
+    font-weight: ;
+    display:none;
+  }
+  @media screen and (min-width:750px){
+    .sub-heading__text-{{ block.id }} {
+        display:flex;
+    }
+}
+{%endfor%}
+{% endstyle %}
+{% schema  %} {
+    "name": "collection-list",
+    "tag": "section",
+    "class": "homepage-section",
+    "settings": [],
+    "blocks": [
+    {
+      "limit": 2,
+      "name": "collection",
+      "type" : "block-type",
+      "settings": [
+      {
+          "type": "collection",
+          "id": "collection",
+          "label" : "Choose collection"
+      },
+      {
+          "type" : "header",
+          "content": "Text Alignment"
+      },
+      {
+          "type": "select",
+          "id": "image_text_alignment_justify",
+          "label": "Text alignment Vertical",
+          "options": [
+          {
+              "value": "flex-start",
+              "label": "top"
+          }, {
+              "value": "center",
+              "label": "Center"
+          }, {
+              "value": "flex-end",
+              "label": "Bottom"
+          }
+          ],
+          "default": "center"
+      },
+      {
+          "type": "select",
+          "id": "image_text_alignment",
+          "label": "Text alignment Horizontal",
+          "options": [
+          {
+              "value": "flex-start",
+              "label": "Left"
+          }, {
+              "value": "center",
+              "label": "Center"
+          }, {
+              "value": "flex-end",
+              "label": "Right"
+          }
+          ],
+          "default": "center"
+      },
+        {
+          "type":"url",
+          "id":"text_link",
+          "label":"Text link"
+        }
+      ]
+  }
+    ],
+    "presets": [
+        {
+            "name" : "collection-list"
+        }
+    ]
+} {% endschema %}

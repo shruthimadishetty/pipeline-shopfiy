@@ -1,0 +1,35 @@
+.blog__contentitem{
+   position:relative;
+}
+.blog-heading{
+  maring:40px;
+}
+.blog__overlay{
+  position:absolute;
+  top:30%;
+  left:30%;
+  padding:40px;
+  padding-left:60px;
+  padding-right:60px;
+}
+.images-blog img{
+  height:100%;
+}
+.max-widths{
+  max-width:400px;
+  margin-left: 30px;
+  margin-bottom:50px;
+}
+
+@media only screen and (min-width:990px)  {
+  .max-widths{
+    max-width:550px;
+  }
+  .images-blog img{
+      height:40vh;
+      object-fit:cover;
+  }
+}
+
+
+    

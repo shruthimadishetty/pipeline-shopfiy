@@ -1,0 +1,293 @@
+{
+  "sections": {
+    "main": {
+      "type": "pipeline-product-template",
+      "blocks": {
+        "f256d3b6-ddbd-4fa9-8109-595217fc6b4d": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "8bc3d03a-3b2d-428f-aaf4-9703823cd738": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "7ccdbd29-050b-4964-afb6-6f6969a52f43": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "c0d2e19d-dc09-427d-8b54-de1e856e95e4": {
+          "type": "variant_picker",
+          "settings": {
+          }
+        },
+        "a50feb36-a956-4723-b824-d3c3cb5a31e8": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "b6bb5332-d715-4277-811f-6dcad75839e5": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "CUSTOMER RESULTS",
+            "content": "<p>• 100% of users reported nourished and hydrated skin<\/p><p>• 95% noted their skin felt smoother and more supple<\/p>",
+            "page": ""
+          }
+        },
+        "0c8ed6a6-391e-45c0-9e29-c5753ab872ef": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "INGREDIENT LIST",
+            "content": "<p>Water, Sodium Cocoyl Glutamate, Propanediol, Glycerin, Acrylates Copolymer, Coco-Betaine, Saccharomyces\/Camellia Sinensis Leaf\/Cladosiphonokamuranus\/Rice Ferment Filtrate*, Luffa Cylindrica Fruit\/Leaf\/Stem Extract, Luffa Cylindrica Fruit, Sodium Lauroyl Hydrolyzed Silk, Rosa Multiflora Fruit Extract, Belamcanda Chinensis Root Extract, Potassium Hydroxide, Sodium Chloride, Polyglyceryl-10 Dioleate, Polyglyceryl-2 Sesquicaprylate, Butylene Glycol, Ethylhexylglycerin, Tetrasodium Edta, Fragrance, Alcohol, Phenoxyethanol.<\/p>",
+            "page": ""
+          }
+        },
+        "e1d6998e-9055-4273-8f76-dd28b6e28bf2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DESCRIPTION",
+            "content": "<p>Firming and lifting face serum that transforms the look of mature, aging skin to restore a youthfully firm, lifted look. Boosted contouring formula to help with loss of firmness, elasticity, fine lines & wrinkles, and dryness.  <\/p><p>This is just a demo store to advertise the Pipeline Theme.  Photography via <a href=\"https:\/\/creativemarket.com\/\" target=\"_blank\">Creative Market<\/a> and <a href=\"https:\/\/unsplash.com\/\" target=\"_blank\">Unsplash<\/a>.  We don't actually sell grooming products.<\/p>",
+            "page": ""
+          }
+        },
+        "71998010-6565-43d4-8917-03ed27a18c34": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.pipeline.value }}"
+          }
+        },
+        "cc83d1f6-a52f-4591-9f36-b51f18809d94": {
+          "type": "pincode",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "f256d3b6-ddbd-4fa9-8109-595217fc6b4d",
+        "8bc3d03a-3b2d-428f-aaf4-9703823cd738",
+        "7ccdbd29-050b-4964-afb6-6f6969a52f43",
+        "c0d2e19d-dc09-427d-8b54-de1e856e95e4",
+        "a50feb36-a956-4723-b824-d3c3cb5a31e8",
+        "b6bb5332-d715-4277-811f-6dcad75839e5",
+        "0c8ed6a6-391e-45c0-9e29-c5753ab872ef",
+        "e1d6998e-9055-4273-8f76-dd28b6e28bf2",
+        "71998010-6565-43d4-8917-03ed27a18c34",
+        "cc83d1f6-a52f-4591-9f36-b51f18809d94"
+      ],
+      "settings": {
+      }
+    },
+    "6240bbf0-8221-4e44-b11a-4dd6fad7a07c": {
+      "type": "product-page-key-points",
+      "blocks": {
+        "f07e5fbe-6a0c-478a-9788-9bc94d5070d6": {
+          "type": "text",
+          "settings": {
+            "heading_text": "Bakuchiol",
+            "font_rangee": 28,
+            "paragraph": "<p>A natural alternative to Retinol. Increases hydration, smoothes skin texture, softens lines, and minimizes breakouts<\/p>"
+          }
+        },
+        "8c56e7bb-d161-4c5f-8f1e-a35fa7b970c3": {
+          "type": "text",
+          "settings": {
+            "heading_text": "Hyaluronic Acid",
+            "font_rangee": 28,
+            "paragraph": "<p>Significantly hydrates, smoothes and softens skin while reducing signs of aging.<\/p>"
+          }
+        },
+        "db56ee8c-b238-4912-91fe-e3662a938a68": {
+          "type": "text",
+          "settings": {
+            "heading_text": "Lavender",
+            "font_rangee": 28,
+            "paragraph": "<p>Soothes and reduces redness in skin. Helps to unclog pores naturally.<\/p>"
+          }
+        },
+        "5ce76d57-ed34-4401-8d5a-ad1a5086e6b4": {
+          "type": "text",
+          "settings": {
+            "heading_text": "Grape seed",
+            "font_rangee": 28,
+            "paragraph": "<p>Helps unclog pores and manage acne breakouts while keeping the skin nourished.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f07e5fbe-6a0c-478a-9788-9bc94d5070d6",
+        "8c56e7bb-d161-4c5f-8f1e-a35fa7b970c3",
+        "db56ee8c-b238-4912-91fe-e3662a938a68",
+        "5ce76d57-ed34-4401-8d5a-ad1a5086e6b4"
+      ],
+      "settings": {
+        "heading_text": "Key ingredients",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "b167639e-3081-485f-a88e-10e3d6f1990b": {
+      "type": "product-page-video-text",
+      "settings": {
+        "background_color": "#fffcf9",
+        "video": "shopify:\/\/files\/videos\/cad63fa75e4442b3a6374a82631eea54.mp4",
+        "image_position": "direction-row-reverse",
+        "heading_text": "How to use",
+        "text1_id": "Use AM\/PM to remove make-up and dirt ",
+        "text2_id": "Dampen face and neck",
+        "text3_id": "Warm oil in your palm, then massage into face and neck ",
+        "text4_id": "Remove with a warm face cloth",
+        "text_alignment": "left",
+        "content_position": "align-center justify-center",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "fccf47d1-2763-4938-b22f-95cecf3bd3dc": {
+      "type": "usp-section",
+      "blocks": {
+        "f8dbe8a7-9e4e-4c1f-8734-e76f265a5813": {
+          "type": "usp-item",
+          "settings": {
+            "logo": "<svg aria-hidden=\"true\" class=\"icon icon-recycled\" viewbox=\"0 0 25 25\"><g stroke=\"#000\" stroke-width=\"1.5\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m18.952 10.185-3.8-6.682a3 3 0 0 0-5.2 0l-1.058 1.83m3.656 15.752h7.558a3 3 0 0 0 2.6-4.5l-1.3-2.25M6.202 9.833l-3.8 6.75a3 3 0 0 0 2.6 4.5h3.052\"><\/path><path d=\"m15.55 18.083-3 3 3 3m4.5-18-1.098 4.098-4.098-1.098m-12.75 1.848 4.098-1.098L7.3 13.931\"><\/path><\/g><\/svg>",
+            "heading_text": "SUSTAINABLY SOURCED",
+            "sub_heading_text": "<p>Minimal impact on the environment<\/p>",
+            "text_color": ""
+          }
+        },
+        "eccf95f6-8cca-459e-887c-9d78c24735fc": {
+          "type": "usp-item",
+          "settings": {
+            "logo": "<svg aria-hidden=\"true\" class=\"icon icon-animal-paw\" viewbox=\"0 0 25 25\"><g transform=\"translate(1 2)\" stroke=\"#000\" stroke-width=\"1.5\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"2.25\" cy=\"11.25\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><ellipse cx=\"7.5\" cy=\"3.75\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><ellipse cx=\"20.25\" cy=\"10.5\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><ellipse cx=\"15\" cy=\"3.75\" rx=\"2.25\" ry=\"3.75\"><\/ellipse><path d=\"M15.574 14.903c-.385-.3-.6-.77-.578-1.257V13.5a3.75 3.75 0 0 0-7.5 0v.146a1.5 1.5 0 0 1-.578 1.257A3.963 3.963 0 0 0 5.25 18c0 2.485 2.686 4.5 6 4.5s6-2.015 6-4.5a3.963 3.963 0 0 0-1.676-3.097z\"><\/path><\/g><\/svg>",
+            "heading_text": "CRUELTY-FREE",
+            "sub_heading_text": "<p>We will never test on our furry friends<\/p>",
+            "text_color": ""
+          }
+        },
+        "69ef9f18-74a7-4697-bedd-5f1c55232bf0": {
+          "type": "usp-item",
+          "settings": {
+            "logo": "<svg aria-hidden=\"true\" class=\"icon icon-leaf\" viewbox=\"0 0 24 24\"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}<\/style><\/defs><path class=\"cls-1\" d=\"M10.248 21.1a7.532 7.532 0 0 1-7.531-7.532C2.717 2.645 15.861 8.252 22.189 3a.466.466 0 0 1 .479-.048.5.5 0 0 1 .3.378C24.9 14.643 16.572 21.1 10.248 21.1z\"><\/path><path class=\"cls-1\" d=\"M13.261\n 11.554a24.984 24.984 0 0 0-8.609 4.286L.75 19.17\"><\/path><\/svg>",
+            "heading_text": "EFFECTIVE BOTANICALS",
+            "sub_heading_text": "<p>Our vegan ingredients are also backed by science<\/p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "f8dbe8a7-9e4e-4c1f-8734-e76f265a5813",
+        "eccf95f6-8cca-459e-887c-9d78c24735fc",
+        "69ef9f18-74a7-4697-bedd-5f1c55232bf0"
+      ],
+      "settings": {
+        "heading_text": "Philosophy",
+        "background_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "16735887736c3c1906": {
+      "type": "apps",
+      "blocks": {
+        "4ab95757-9ed7-44a4-9ac3-a5d17daea190": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "4ab95757-9ed7-44a4-9ac3-a5d17daea190"
+      ],
+      "settings": {
+      }
+    },
+    "b972d535-72f7-4f4d-aa05-4af6933d24ca": {
+      "type": "product-page-items",
+      "settings": {
+        "text_id": "WORKS WELL WITH",
+        "collection_id": "oils-serums",
+        "product_limit": 4,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "5cc7a49b-1bb6-48e3-97e1-75ad4aaa5482": {
+      "type": "product-page-image-gallery",
+      "blocks": {
+        "be896903-4b5c-49de-83ee-408db844a161": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p1.webp",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        },
+        "2310482a-db9d-46c5-b9a5-2c37346b0036": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p2.webp",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        },
+        "0a562c2e-895e-4a88-8442-404f61622f07": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p3.webp",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        },
+        "e0d3836d-a3f0-4428-9b68-0d451d435da4": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p4.webp",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        },
+        "98de995a-5d73-4642-9479-662455b2f041": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p6.webp",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        },
+        "b3dd2a00-a405-4dc8-85db-b7f2c291123f": {
+          "type": "image-gallery",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/p5.webp",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        }
+      },
+      "block_order": [
+        "be896903-4b5c-49de-83ee-408db844a161",
+        "2310482a-db9d-46c5-b9a5-2c37346b0036",
+        "0a562c2e-895e-4a88-8442-404f61622f07",
+        "e0d3836d-a3f0-4428-9b68-0d451d435da4",
+        "98de995a-5d73-4642-9479-662455b2f041",
+        "b3dd2a00-a405-4dc8-85db-b7f2c291123f"
+      ],
+      "settings": {
+        "capture_text": "SHOP THE FEED",
+        "heading_text": "@darmaskincareco",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6240bbf0-8221-4e44-b11a-4dd6fad7a07c",
+    "b167639e-3081-485f-a88e-10e3d6f1990b",
+    "fccf47d1-2763-4938-b22f-95cecf3bd3dc",
+    "16735887736c3c1906",
+    "b972d535-72f7-4f4d-aa05-4af6933d24ca",
+    "5cc7a49b-1bb6-48e3-97e1-75ad4aaa5482"
+  ]
+}

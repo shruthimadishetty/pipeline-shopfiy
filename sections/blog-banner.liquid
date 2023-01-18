@@ -1,0 +1,205 @@
+{{ 'blog-banner.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="center blog-heading">{{ section.settings.heading }}</div>
+<div class="blog__banner page-width section-{{ section.id }}-padding">
+        <div class="blog__contentitem">
+                <div class="blog_container">
+                  {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+                  {% render 'image',
+                    class: 'images-blog',
+                    mobileSrc: section.settings.image_mobile,
+                    desktopSrc: section.settings.image
+                  %}
+                </div>
+        </div>
+        <div class="blog__overlay blog-backgound-{{ section.id }}">
+            <div class="flex {{ section.settings.content_position }}  {{ section.settings.text_alignment }} page-width">
+                  <div class="max-widths">
+                            {% if section.settings.caption_text != blank %}
+                                 <div class="image-caption">{{ section.settings.caption_text }}</div>
+                            {% endif %}
+                
+                            {% if section.settings.title != blank %}
+                                  <div class="h4 image-title">{{ section.settings.title }}</div>
+                            {% endif %}
+          
+                            {% if section.settings.button_text != blank %}
+                               <div class="button-blog">
+                                  <a href="{{ section.settings.button_link }}" class="">
+                                      {{ section.settings.button_text }}
+                                  </a>
+                                </div> 
+                            {% endif %}
+                    </div>
+              </div>
+        </div>
+ </div>
+
+{% style %}
+.blog-backgound-{{ section.id }}{
+  background-color:{{section.settings.bg_color}};
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "blog-banner",
+  "tag":"section",
+  "class":"section",
+  "settings": [
+        {
+          "type":"text",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1200 x 500px .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+           "id": "image_mobile",
+           "label": "Image (Mobile)",
+          "info": "600 x 800px .jpg recommended"
+        },
+        {
+          "type":"color",
+          "id":"bg_color",
+          "label":"Bg color"
+        },
+        {
+          "type": "text",
+          "id": "caption_text",
+          "label":"Caption Text",
+          "default": "PURIFY AND HEAL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label":"Title",
+          "default": "Intentional Skincare"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+           "label": "shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+           "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+              {
+                "value": "align-start justify-start",
+                "label": "Top left"
+              },
+              {
+                "value": "align-start justify-center",
+                "label": "Top center"
+              },
+              {
+                "value": "align-start justify-end",
+                "label": "Top right"
+              },
+              {
+                "value": "align-center justify-start",
+                "label": "Middle left"
+              },
+              {
+                "value": "align-center justify-center",
+                "label": "Middle center"
+              },
+              {
+                "value": "align-center justify-end",
+                "label": "Middle right"
+              },
+              {
+                "value": "align-end justify-start",
+                "label": "Bottom left"
+              },
+              {
+                "value": "align-end justify-center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "align-end justify-end",
+                "label": "Bottom right"
+              }
+          ],
+            "default": "align-start justify-start"
+        },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "blog-banner"
+    }
+  ]
+
+}
+{% endschema %}

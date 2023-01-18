@@ -1,0 +1,68 @@
+{{ 'product-card-items.css' | asset_url | stylesheet_tag }}
+
+<product-card class="product-card relative" data-handle="{{ product.handle }}">
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+  {%- assign form_id = 'Form-' | append: section.id | append: product.id -%}
+
+  <div class="image-container">
+  <a href="{{ product.url }}" class="product-card__link hover">
+    {%- render 'image',
+      class: 'product-card__image media media--square',
+      mobileSrc: featured_image,
+      desktopSrc: featured_image
+    -%}
+  </a>
+  <div class="p quick">quick view</div>
+  </div>
+  
+
+  <div class="product-card__meta center mb-20">
+    <a class="product_title" href="{{ product.url }}">
+      <div class="product-name">{{ product.title }}</div>
+    </a>
+<!--     <div class="product-card__form center">
+    {%- form 'product', product -%}
+      <input type="hidden" name="quantity" value="1">
+      <select name="id">
+        {% for variant in product.variants %}
+          <option
+            value="{{ variant.id }}"
+            {% if variant.id == current_variant.id %}
+              selected
+            {% endif %}
+          >
+            {{ variant.title }}
+          </option>
+        {% endfor %}
+      </select>
+    {%- endform -%}
+  </div> -->
+    <div class="product-card__prices">
+      <div class="product-card__price product_text_color">
+        <p class="price">{{ current_variant.price | money_without_trailing_zeros }}</p>
+      </div>
+      
+<!--       {% if current_variant.compare_at_price > current_variant.price %}
+        <div class="product-card__compareprice product_text_color">
+          {{ current_variant.compare_at_price | money }}
+        </div>
+      {% endif %} -->
+     
+<!--       <div class="product-card__button center">
+        {% if current_variant.available %}
+          <button type="submit" class="button button--primary button--full-width card_button" form="{{ form_id }}">
+            Add to cart
+          </button>
+        {% else %}
+          <button type="button" class="button button--primary button--full-width" disabled>Soldout</button>
+        {% endif %}
+      </div> -->
+    </div>
+  </div>
+
+  <script type="application/json">
+    {{ product.variants | json }}
+  </script>
+</product-card>
+

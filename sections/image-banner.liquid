@@ -1,0 +1,178 @@
+{{ 'image-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="image__banner">
+        <div class="image__contentitem">
+                <div class="image_container">
+                  {% assign mobile_image = section.settings.image_mobile | default: section.settings.image %}
+                  {% render 'image',
+                    class: 'images',
+                    mobileSrc: section.settings.image_mobile,
+                    desktopSrc: section.settings.image
+                  %}
+                </div>
+        </div>
+        <div class="image__overlay">
+            <div class="flex {{ section.settings.content_position }}  {{ section.settings.text_alignment }} page-width">
+                  <div class="max-width text--loading-effect">
+                            {% if section.settings.caption_text != blank %}
+                                 <div class="caption--{{ section.id }} image-caption">{{ section.settings.caption_text }}</div>
+                            {% endif %}
+                
+                            {% if section.settings.title != blank %}
+                                  <div class="text title--{{section.id}} image-title">{{ section.settings.title }}</div>
+                            {% endif %}
+          
+                            {% if section.settings.button_text != blank %}
+                               <div class="button-image">
+                                  <a href="{{ section.settings.button_link }}" class="button image-button button-padding-{{ section.id }}">
+                                      {{ section.settings.button_text | upcase }}
+                                  </a>
+                                </div> 
+                            {% endif %}
+                    </div>
+              </div>
+        </div>
+ </div>
+
+{% style %}
+.caption--{{ section.id }}{
+    color:{{section.settings.text_color}};
+}
+.title--{{section.id}}{
+  color:{{section.settings.title_color}};
+}
+
+.button-padding-{{ section.id }}{
+  background-color:{{section.settings.bg_color}};
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "image-banner",
+  "tag":"section",
+  "class":"section",
+  "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1200 x 500px .jpg recommended"
+        },
+        {
+          "type": "image_picker",
+           "id": "image_mobile",
+           "label": "Image (Mobile)",
+          "info": "600 x 800px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "caption_text",
+          "label":"Caption Text",
+          "default": "PURIFY AND HEAL"
+        },
+        {
+          "type":"color",
+          "id":"text_color",
+          "label":"Text color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label":"Title",
+          "default": "Intentional Skincare"
+        },
+        {
+          "type":"color",
+          "id":"title_color",
+          "label":"Title color"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+           "label": "shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+           "label": "Button Link"
+        },
+        {
+          "type":"color",
+          "id":"bg_color",
+          "label":"Bg color"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+              {
+                "value": "align-start justify-start",
+                "label": "Top left"
+              },
+              {
+                "value": "align-start justify-center",
+                "label": "Top center"
+              },
+              {
+                "value": "align-start justify-end",
+                "label": "Top right"
+              },
+              {
+                "value": "align-center justify-start",
+                "label": "Middle left"
+              },
+              {
+                "value": "align-center justify-center",
+                "label": "Middle center"
+              },
+              {
+                "value": "align-center justify-end",
+                "label": "Middle right"
+              },
+              {
+                "value": "align-end justify-start",
+                "label": "Bottom left"
+              },
+              {
+                "value": "align-end justify-center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "align-end justify-end",
+                "label": "Bottom right"
+              }
+          ],
+            "default": "align-start justify-start"
+        }
+       ],
+
+  "presets": [
+    {
+      "name": "image-banner"
+    }
+  ]
+
+}
+{% endschema %}

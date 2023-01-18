@@ -1,0 +1,60 @@
+
+.flexboxs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.flexbox_items {
+  width: 100%;
+  padding: 0 10px;
+}
+@media only screen and (min-width: 990px) {
+  .flexbox_items {
+    width: 100%;
+  }
+  .containers {
+    margin:0px 400px 0px 400px;
+  }
+  .product-heading{
+    padding-bottom:30px;
+  }
+}
+.direction-row {
+  flex-direction: row;
+}
+/* Collapsible tab in image with text five */
+ .collapsible {
+  color: black;
+  cursor: pointer;
+  padding: 25px;
+  width: 100%;
+  border-top: 0.1px solid  #c0c6c5;
+/*   border-bottom: 0.1px solid  gray; */
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+.collapsible:after {
+  content: '\203A';
+  color: black;
+  font-weight: 700;
+  float: right;
+  margin-left: 3px;
+}
+.paragraph_collapsable p{
+  padding-left:20px;
+  color:black;
+}
+.active:after {
+  content: "\2212";
+}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.line{
+  width:100%;
+  margin-bottom:-20px;
+}

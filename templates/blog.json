@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "7de36f4c-914b-4b9c-a34a-75f7edc3ee2d": {
+      "type": "blog-banner",
+      "settings": {
+        "heading": "News",
+        "image": "shopify:\/\/shop_images\/bg.webp",
+        "bg_color": "#fcfaf7",
+        "caption_text": "GIDEON BALDRIDGE Jul 05, 2021",
+        "title": "Christie Kinter stays cool for the summer",
+        "button_text": "Learn More",
+        "button_link": "",
+        "text_alignment": "center",
+        "content_position": "align-center justify-center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-skeleton",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "f00ddfa3-552d-44ca-a4a4-7df11d4fac80": {
+      "type": "blog-post",
+      "settings": {
+        "blog": "pipeline",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "7de36f4c-914b-4b9c-a34a-75f7edc3ee2d",
+    "main",
+    "f00ddfa3-552d-44ca-a4a4-7df11d4fac80"
+  ]
+}

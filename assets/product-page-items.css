@@ -1,0 +1,19 @@
+.home__subtitle{
+  padding:10px;
+}
+.product:after {
+  content: 'flickity';
+  display: none; /* hide :after */
+}
+.product{
+    display:block;
+  }
+@media screen and ( min-width: 768px ) {
+  /* disable Flickity for large devices */
+  .product:after {
+    content: '';
+  }
+  .product{
+    display:flex;
+  }
+}
